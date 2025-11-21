@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>MovieFlix - Download Movies</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,0" rel="stylesheet"/>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24
+      }
+    </style>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#0d59f2",
+              "background-light": "#f5f6f8",
+              "background-dark": "#101622",
+            },
+            fontFamily: {
+              "display": ["Be Vietnam Pro", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+</head>
+<body class="bg-background-dark font-display">
+<div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<div class="px-4 sm:px-8 md:px-16 lg:px-24 xl:px-40 flex flex-1 justify-center py-5">
+<div class="layout-content-container flex flex-col w-full max-w-[1280px] flex-1">
+<!-- TopNavBar -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#222f49] px-4 lg:px-10 py-3 sticky top-0 bg-background-dark/80 backdrop-blur-sm z-50">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-4 text-white">
+<div class="size-6 text-primary">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M39.475 21.6262C40.358 21.4363 40.6863 21.5589 40.7581 21.5934C40.7876 21.655 40.8547 21.857 40.8082 22.3336C40.7408 23.0255 40.4502 24.0046 39.8572 25.2301C38.6799 27.6631 36.5085 30.6631 33.5858 33.5858C30.6631 36.5085 27.6632 38.6799 25.2301 39.8572C24.0046 40.4502 23.0255 40.7407 22.3336 40.8082C21.8571 40.8547 21.6551 40.7875 21.5934 40.7581C21.5589 40.6863 21.4363 40.358 21.6262 39.475C21.8562 38.4054 22.4689 36.9657 23.5038 35.2817C24.7575 33.2417 26.5497 30.9744 28.7621 28.762C30.9744 26.5497 33.2417 24.7574 35.2817 23.5037C36.9657 22.4689 38.4054 21.8562 39.475 21.6262ZM4.41189 29.2403L18.7597 43.5881C19.8813 44.7097 21.4027 44.9179 22.7217 44.7893C24.0585 44.659 25.5148 44.1631 26.9723 43.4579C29.9052 42.0387 33.2618 39.5667 36.4142 36.4142C39.5667 33.2618 42.0387 29.9052 43.4579 26.9723C44.1631 25.5148 44.659 24.0585 44.7893 22.7217C44.9179 21.4027 44.7097 19.8813 43.5881 18.7597L29.2403 4.41187C27.8527 3.02428 25.8765 3.02573 24.2861 3.36776C22.6081 3.72863 20.7334 4.58419 18.8396 5.74801C16.4978 7.18716 13.9881 9.18353 11.5858 11.5858C9.18354 13.988 7.18717 16.4978 5.74802 18.8396C4.58421 20.7334 3.72865 22.6081 3.36778 24.2861C3.02574 25.8765 3.02429 27.8527 4.41189 29.2403Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+<h2 class="text-white text-lg font-bold leading-tight tracking-[-0.015em]">MovieFlix</h2>
+</div>
+<nav class="hidden lg:flex items-center gap-9">
+<a class="text-white/80 hover:text-white text-sm font-medium leading-normal transition-colors" href="#">Action</a>
+<a class="text-white/80 hover:text-white text-sm font-medium leading-normal transition-colors" href="#">Comedy</a>
+<a class="text-white/80 hover:text-white text-sm font-medium leading-normal transition-colors" href="#">Drama</a>
+<a class="text-white/80 hover:text-white text-sm font-medium leading-normal transition-colors" href="#">Sci-Fi</a>
+</nav>
+</div>
+<div class="flex flex-1 justify-end items-center gap-4">
+<label class="flex flex-col min-w-40 !h-10 max-w-64">
+<div class="flex w-full flex-1 items-stretch rounded-lg h-full">
+<div class="text-[#90a4cb] flex border-none bg-[#222f49] items-center justify-center pl-3 rounded-l-lg border-r-0">
+<span class="material-symbols-outlined">search</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-white focus:outline-0 focus:ring-0 border-none bg-[#222f49] focus:border-none h-full placeholder:text-[#90a4cb] px-4 rounded-l-none border-l-0 pl-2 text-base font-normal leading-normal" placeholder="Search for movies..." value=""/>
+</div>
+</label>
+<div class="hidden sm:flex gap-2">
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-primary/90 transition-colors">
+<span class="truncate"><a href="search.html">Search</a></span>
+</button>
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-[#222f49] text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-[#2e3f5e] transition-colors">
+<span class="truncate">Login</span>
+</button>
+</div>
+</div>
+</header>
+<main class="flex-grow">
+<!-- HeroSection -->
+<div class="py-10 @container">
+<div class="@[480px]:p-4">
+<div class="flex min-h-[480px] flex-col gap-6 bg-cover bg-center bg-no-repeat @[480px]:gap-8 @[480px]:rounded-xl items-start justify-end px-4 pb-10 @[480px]:px-10" data-alt="A lone spaceship flying through a colorful nebula in deep space." style='background-image: linear-gradient(rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.6) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuCDFZ3N0D7Mf2t6_t7CwEyWvmQb97wCf2NengGwKezrgucmy9TkYOJkY4SVzWfBa6B2OFAy_yohHn0hsUmn8SJXO55CmKld3_1wyVsg9dudDSzjwJ-7Or8D8nqFZJRrxkLGTk3JyCODIBR1uLOx1lyUQcBTAfPwvOLaCStv55I8TcbyZtITut9hXa1KFXQMwIWYNPlMmyAMzNHGan7c2xqzvD2FIVAuibM0r0BYdgYgWETjwx5RXlwaB3WQXEugz_sgQ_eCF1YETQa-");'>
+<div class="flex flex-col gap-2 text-left max-w-3xl">
+<h1 class="text-white text-4xl font-black leading-tight tracking-[-0.033em] @[480px]:text-5xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em]">
+                                            Featured Movie: Interstellar Odyssey
+                                        </h1>
+<h2 class="text-white/80 text-sm font-normal leading-normal @[480px]:text-base @[480px]:font-normal @[480px]:leading-normal">
+                                           A thrilling adventure across the cosmos where a lone pilot must face unknown cosmic entities to find humanity's new home. An epic journey of courage and discovery.
+                                        </h2>
+</div>
+<div class="flex-wrap gap-3 flex">
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 @[480px]:h-12 @[480px]:px-5 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em] @[480px]:text-base @[480px]:font-bold @[480px]:leading-normal @[480px]:tracking-[0.015em] hover:bg-primary/90 transition-colors">
+<span class="truncate">View Details</span>
+</button>
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 @[480px]:h-12 @[480px]:px-5 bg-[#222f49] text-white text-sm font-bold leading-normal tracking-[0.015em] @[480px]:text-base @[480px]:font-bold @[480px]:leading-normal @[480px]:tracking-[0.015em] hover:bg-[#2e3f5e] transition-colors">
+<span class="truncate">Download Now</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- SectionHeader -->
+<h2 class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">All Movies</h2>
+<!-- Chips -->
+<div class="flex gap-3 p-3 overflow-x-auto">
+<div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-primary pl-4 pr-4 cursor-pointer">
+<p class="text-white text-sm font-medium leading-normal">All</p>
+</div>
+<div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-[#222f49] pl-4 pr-4 cursor-pointer hover:bg-[#2e3f5e] transition-colors">
+<p class="text-white text-sm font-medium leading-normal">New Releases</p>
+</div>
+<div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-[#222f49] pl-4 pr-4 cursor-pointer hover:bg-[#2e3f5e] transition-colors">
+<p class="text-white text-sm font-medium leading-normal">Trending</p>
+</div>
+<div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-[#222f49] pl-4 pr-4 cursor-pointer hover:bg-[#2e3f5e] transition-colors">
+<p class="text-white text-sm font-medium leading-normal">Top Rated</p>
+</div>
+<div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-[#222f49] pl-4 pr-4 cursor-pointer hover:bg-[#2e3f5e] transition-colors">
+<p class="text-white text-sm font-medium leading-normal">Upcoming</p>
+</div>
+</div>
+<!-- ImageGrid -->
+<div class="grid grid-cols-[repeat(auto-fit,minmax(158px,1fr))] gap-4 p-4">
+<div class="group relative overflow-hidden rounded-xl">
+<div class="bg-cover bg-center flex flex-col gap-3 rounded-xl justify-end p-4 aspect-[3/4] transition-transform duration-300 ease-in-out group-hover:scale-105" data-alt="Futuristic cityscape at night with flying vehicles." style='background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuBtXVPhRNE-OWCmfUToQvQwMXM7nTdeys7zcXjSOnLNv0uuAFBLG7VCH4PElVgeW7yj8uPpjdaXekDvMloHrpCRkmQd1V3mlUqiZ8I4SBp5sm6z1vMbCXg00guMRBPxmhRCiS3svBS9qBPTqIyYzeHhcDxFNidthTsXgrj7JUPM2jCL9hNnVKSkeQ4Epai67nVVi5tnrzTozt2tFWuRrofuqIALQor1Y9z7JKU5MFVO5S2sgSMj0I4ua_bF5u_PkPoif06gpUTPu4A3");'>
+<p class="text-white text-base font-bold leading-tight line-clamp-2">Cosmic Echoes (2023)</p>
+</div>
+</div>
+<div class="group relative overflow-hidden rounded-xl">
+<div class="bg-cover bg-center flex flex-col gap-3 rounded-xl justify-end p-4 aspect-[3/4] transition-transform duration-300 ease-in-out group-hover:scale-105" data-alt="A hooded figure in a neon-lit alley." style='background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuAwi38V6_CA_9L3c1Yia0G4J8E3cfvs3d2JLrSzLrj37eY7brUHdZD4dO_XP18IoPSM07Zjz_eaN634DYNLZKgUrBsm4htv_xBmKw2bGBJUFjxM4jSYilGrB8Dw8VY7NfVo4senE0MoSZMf66Cjs_RoXSJc_VMwjCoXPsYnsYK4WRwyiwuANU1PhKhkJlrvzPyWNpRwULqvvfRmSj-kfKOhiv2Xt9GLTgHoWIfbPp8r1MmcLFuqKwB7EqTK1FSAPglpbtFV_Z4muwZN");'>
+<p class="text-white text-base font-bold leading-tight line-clamp-2">Cyber Runner (2024)</p>
+</div>
+</div>
+<div class="group relative overflow-hidden rounded-xl">
+<div class="bg-cover bg-center flex flex-col gap-3 rounded-xl justify-end p-4 aspect-[3/4] transition-transform duration-300 ease-in-out group-hover:scale-105" data-alt="A detective looking down a dark, rainy city street." style='background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuCBvFCWqSnHy0duj8fivi03CobnSXOoU3Pwq-A5TyR60sJOUbXcvbwS7mrY8xopEcvYNSjK-Q0LQ4LDGEVNIw2E92ImHyiK445x5kiTfNxmwUncUkH2qrQXhmMUTXItC7ePAy-4GbinfklTcZ_f-X0LE7zfGGULUyXeAmfVBkOFC51jrslzV96FSI2dZQhDK2vW8yda_dx-KY-zQUaEueq9eNCSZ8cthMc7ebVZ1Ty6L7oKjbKUc1GVruxhDzf8FK_lv3OkhB6G69AZ");'>
+<p class="text-white text-base font-bold leading-tight line-clamp-2">Midnight Alley (2023)</p>
+</div>
+</div>
+<div class="group relative overflow-hidden rounded-xl">
+<div class="bg-cover bg-center flex flex-col gap-3 rounded-xl justify-end p-4 aspect-[3/4] transition-transform duration-300 ease-in-out group-hover:scale-105" data-alt="A warrior standing on a cliff overlooking a battlefield." style='background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuD_WziOZ-zVUMqESPlvrFRLqQi_y70dkCcKpt3Dzlp7dMVXJ1b4bEcoRWUBoahJGqhPx3sE3EdLK3r8aMBewzG000amIbSazZ1lC_dLGZI3Kri7Z0YPG7Q9dGtGQenAxTf1fPI39bs4K-d4JweQBg5c7JOvmtF8bSkz17KdK2JBxDtLpIXnn-giLAcrn22sd0hvHmEotIfU7NxLC9HY865vGEWe8-3wA2CZ34IPxlJ7fYfxmgWRn8OmKNy7u2c6NUngVdrwB_ygu_Lt");'>
+<p class="text-white text-base font-bold leading-tight line-clamp-2">The Last Stand (2022)</p>
+</div>
+</div>
+<div class="group relative overflow-hidden rounded-xl">
+<div class="bg-cover bg-center flex flex-col gap-3 rounded-xl justify-end p-4 aspect-[3/4] transition-transform duration-300 ease-in-out group-hover:scale-105" data-alt="A mystical glowing artifact underwater." style='background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuBbTBot_u-TQYOjf-xxHhKMFJ6PY5QxV5KuOS_jRAZBXb98H1hOBg72Z5203Eb8CC4BqAnkGfj8IRZl_1FFw_lKeNmIR6N_D_L-C5I7SN07T13Og23RFdVC4n-lbiBNTPaAmyXAm2bRdEKsXUPmbQwOQiVMubxgstFIpbnZGmMUOP8DuuBkd5cOOfII_6WxhBZ4LYyVd4b0Bn6Tvm0nYycf8SipVK93yx8LxIRUjuIpJae2NqE4xYHz35it7XcdpzmGBA03fC-rMHMP");'>
+<p class="text-white text-base font-bold leading-tight line-clamp-2">Ocean's Heart (2024)</p>
+</div>
+</div>
+<div class="group relative overflow-hidden rounded-xl">
+<div class="bg-cover bg-center flex flex-col gap-3 rounded-xl justify-end p-4 aspect-[3/4] transition-transform duration-300 ease-in-out group-hover:scale-105" data-alt="An astronaut floating in space above Earth." style='background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuB-ll2H_vulhC_aqlvZj6tG-s-nMZ8GCzNGZzqtU0iZjFArgHiTFp8DIPeKT-f4s1ykXtFbKRXc5Vu7tfUobDkYRjUbJckJP96_RmP8CEik_xAX7M71g3_wFBenhsVIUzNDTGSUvT9yWRh8C5tysVqXoqrg3DgDfWwSvfjjPF45xURQ-xmDUCI5T6bJyZ5lJXKOPFxiVzyaMvXw6z8cYvinjAEF_EbTvPvPo3c30NxlbT_lS5skSPfVgvhqhJs90GJ9KHm74vQQux6b");'>
+<p class="text-white text-base font-bold leading-tight line-clamp-2">Zero Gravity (2023)</p>
+</div>
+</div>
+<div class="group relative overflow-hidden rounded-xl">
+<div class="bg-cover bg-center flex flex-col gap-3 rounded-xl justify-end p-4 aspect-[3/4] transition-transform duration-300 ease-in-out group-hover:scale-105" data-alt="A hidden temple deep within a lush jungle." style='background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuBAUe2B1zAZRPEefpxlA6MGiV3yBUxwuvS59j9pt9hM1tv3RUuFQKmhjv3fD0lMPgj1ZP3YRKsdHnnhonjyKdUpD7xStbzFfklp81agjEWSBhrTkwJnLIlJZUMVXVghfd6pnk5jiF5nYYVKVCHFiYjs0nGreNPEOyjHTU4eDEgxGVKdls7rYb0MYZy-3O1csRrZETqkpV1EabDWwTW3RoPM89fJnWFecYh3_EHitupPHtPom5fLMGclnXpPmUyot06HRq7Osu8wRMb_");'>
+<p class="text-white text-base font-bold leading-tight line-clamp-2">Hidden Kingdom (2024)</p>
+</div>
+</div>
+<div class="group relative overflow-hidden rounded-xl">
+<div class="bg-cover bg-center flex flex-col gap-3 rounded-xl justify-end p-4 aspect-[3/4] transition-transform duration-300 ease-in-out group-hover:scale-105" data-alt="An abstract representation of time travel with clock faces." style='background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuA59ZMFcsR68L7uY_uzFRBgL5tjuEUJqqYLRtnuY9Bon0QtTQmBQcXirmtpMkg_rL2V6O0bJWX0eOJP3t2Q8R_BTpxaqmgUUkT37xP-uafAOTFNOUAuxvrNf4M3HH-tsIXaxKuSQFY7uGq30TG5svyJ2oLDIXU9HO6W-XjK4Sxt5bRtdprlTPpz6A5BZYVZlwrJ0j7ULv-jSTacDjM6VO1yQCmavOjKqWd3ltioDSju970yniFQoSF8zP-SJHmyIosMWT0_-9NX7AxX");'>
+<p class="text-white text-base font-bold leading-tight line-clamp-2">Chronos Sphere (2022)</p>
+</div>
+</div>
+<div class="group relative overflow-hidden rounded-xl">
+<div class="bg-cover bg-center flex flex-col gap-3 rounded-xl justify-end p-4 aspect-[3/4] transition-transform duration-300 ease-in-out group-hover:scale-105" data-alt="A ghostly figure on a misty river." style='background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuBCAsQp3kH_MeiMy7FzrDjlhW3vLQHOPP6bLBcMCboHxq-fDPWEXFctPyQlP5zPfykpOaMmSnCC7XxA9okAHKjA2V__HhHu3drHvmgt7aLlYtDQwJelDun0skm643Mdt0HxqA_P_dsp0Amfn7YYbjO1q7QXol_OaRYDOBXp7HLVy_EprVsUHl4E0lGyzwQe6iZQWVo6Ucpb-oo_T6mSP3f2oK1JdBfyLfB79Z_eSB-9_SyYopLXAwPx56fR6c8FJeF2Try2l5Si6WSM");'>
+<p class="text-white text-base font-bold leading-tight line-clamp-2">River of Souls (2023)</p>
+</div>
+</div>
+<div class="group relative overflow-hidden rounded-xl">
+<div class="bg-cover bg-center flex flex-col gap-3 rounded-xl justify-end p-4 aspect-[3/4] transition-transform duration-300 ease-in-out group-hover:scale-105" data-alt="A high-tech lab with a glowing orb at its center." style='background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuDqL-jaIrUsNi-xr7xBS5Nr4PiQj5nw_cM8xjDigL3ncbPcujwLtqsC67YHa1hrasbhsnmMNUaQ31bV6U5rfZtKSeTy0Q4sVPqwoE5iIQdOYSL1QpO-i9lx6QobuF1nB4ImLcu6RLqR0GoV4a87sP_v34TaBQmvlXFbgdsiqygkBlb39RIoCKhKloSUpyKhSPKHmWLQ3E7sjvlwZCj3mbEv0RWDZ2utPwD8iZHyfRuKtMKuqPDTwWagU_71zU38QSjYPG9XYdNWf_55");'>
+<p class="text-white text-base font-bold leading-tight line-clamp-2">Project Genesis (2024)</p>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="mt-16 border-t border-[#222f49] py-8 px-4">
+<div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+<div class="text-center md:text-left">
+<div class="flex items-center justify-center md:justify-start gap-3 mb-2">
+<div class="size-5 text-primary">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M39.475 21.6262C40.358 21.4363 40.6863 21.5589 40.7581 21.5934C40.7876 21.655 40.8547 21.857 40.8082 22.3336C40.7408 23.0255 40.4502 24.0046 39.8572 25.2301C38.6799 27.6631 36.5085 30.6631 33.5858 33.5858C30.6631 36.5085 27.6632 38.6799 25.2301 39.8572C24.0046 40.4502 23.0255 40.7407 22.3336 40.8082C21.8571 40.8547 21.6551 40.7875 21.5934 40.7581C21.5589 40.6863 21.4363 40.358 21.6262 39.475C21.8562 38.4054 22.4689 36.9657 23.5038 35.2817C24.7575 33.2417 26.5497 30.9744 28.7621 28.762C30.9744 26.5497 33.2417 24.7574 35.2817 23.5037C36.9657 22.4689 38.4054 21.8562 39.475 21.6262ZM4.41189 29.2403L18.7597 43.5881C19.8813 44.7097 21.4027 44.9179 22.7217 44.7893C24.0585 44.659 25.5148 44.1631 26.9723 43.4579C29.9052 42.0387 33.2618 39.5667 36.4142 36.4142C39.5667 33.2618 42.0387 29.9052 43.4579 26.9723C44.1631 25.5148 44.659 24.0585 44.7893 22.7217C44.9179 21.4027 44.7097 19.8813 43.5881 18.7597L29.2403 4.41187C27.8527 3.02428 25.8765 3.02573 24.2861 3.36776C22.6081 3.72863 20.7334 4.58419 18.8396 5.74801C16.4978 7.18716 13.9881 9.18353 11.5858 11.5858C9.18354 13.988 7.18717 16.4978 5.74802 18.8396C4.58421 20.7334 3.72865 22.6081 3.36778 24.2861C3.02574 25.8765 3.02429 27.8527 4.41189 29.2403Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+<h3 class="text-white text-lg font-bold">MovieFlix</h3>
+</div>
+<p class="text-white/60 text-sm">© 2024 MovieFlix, Inc. All rights reserved.</p>
+</div>
+<div class="flex flex-wrap justify-center gap-x-6 gap-y-2">
+<a class="text-white/80 hover:text-white text-sm transition-colors" href="#">About Us</a>
+<a class="text-white/80 hover:text-white text-sm transition-colors" href="#">Contact</a>
+<a class="text-white/80 hover:text-white text-sm transition-colors" href="#">Terms of Service</a>
+<a class="text-white/80 hover:text-white text-sm transition-colors" href="#">Privacy Policy</a>
+</div>
+</div>
+</footer>
+</div>
+</div>
+</div>
+</div>
+</body></html>
